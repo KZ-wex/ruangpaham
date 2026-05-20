@@ -111,6 +111,6 @@ firebase deploy --only hosting
 
 ## 👥 Kontributor
 
-- **Ridho Wicaksono** - _Main Developer_ - [@rdhwck](https://instagram.com/rdhwck)
+- **Ridho Wicaksono** - _AI Application Engineer_ - [@rdhwck](https://instagram.com/rdhwck)
 
-**Untuk:** GDGOC Universitas Esa Unggul - Mini Competition 2026
+**Untuk:** GDGoC Universitas Esa Unggul - Mini Competition 2026
