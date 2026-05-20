@@ -33,6 +33,8 @@ Untuk efisiensi dan keamanan tingkat tinggi, projek ini di-deploy menggunakan du
 2. **Google Cloud Run:** Menjalankan _containerized backend server_ (`server.ts`) secara serverless untuk memproses logika AI dan data sensitif tanpa mengekspos API Key ke sisi klien.
 3. **Firebase Hosting Rewrites (Proxy):** Menghubungkan rute `/api/**` dari domain statis Firebase langsung ke endpoint Cloud Run secara internal.
 
+---
+
 ## ⚙️ Persiapan & Instalasi Lokal
 
 ### 1. Prasyarat
@@ -48,6 +50,67 @@ Pastikan Anda sudah menginstal:
 Clone repository ini:
 
 ```bash
-git clone [https://github.com/username-anda/ruangpaham-gdgoc.git](https://github.com/username-anda/ruangpaham-gdgoc.git)
+git clone [https://github.com/KZ-wex/ruangpaham.git](https://github.com/KZ-wex/ruangpaham.git)
 cd ruangpaham
 ```
+
+Instal dependensi:
+
+```bash
+npm install
+```
+
+### 3. Sukses Variabel Lingkungan (.env.local)
+
+Buat file `.env.local` di root direktori dan masukkan konfigurasi berikut:
+
+```env
+# Google Gemini API Key
+GEMINI_API_KEY=your_gemini_api_key
+
+# Firebase Configuration
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=gen-lang-client-0536779203.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=gen-lang-client-0536779203
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=gen-lang-client-0536779203.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+```
+
+### 4. Jalankan di Lokal
+
+```bash
+npm run dev
+```
+
+---
+
+## 🚀 Langkah Deployment
+
+Aplikasi ini menggunakan integrasi penuh antara Firebase dan Google Cloud Platform.
+
+Pastikan sudah login ke Firebase CLI:
+
+```bash
+firebase login
+```
+
+Lakukan kompilasi kode produksi:
+
+```bash
+npm run build
+```
+
+Deploy ke Firebase Hosting kustom:
+
+```bash
+firebase deploy --only hosting
+```
+
+---
+
+## 👥 Kontributor
+
+- **Ridho Wicaksono** - _Main Developer_ - [@rdhwck](https://instagram.com/rdhwck)
+
+**Untuk:** GDGOC Universitas Esa Unggul - Mini Competition 2026
